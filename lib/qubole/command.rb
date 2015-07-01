@@ -1,8 +1,7 @@
-module Qubole
-  class Command
-    attr_reader :id, :status, :progress, :raw
-    attr_accessor :command_type, :payload
+require "ostruct"
 
+module Qubole
+  class Command < OpenStruct
     # 
     # Paginated commands history
     # @param page [Integer] page number
@@ -13,7 +12,7 @@ module Qubole
     def self.page(page, opts = {})
       per_page = opts[:per_page] || 10
       Qubole.get('/commands', page: page, per_page: per_page)['commands'].map do |command|
-        new.parse(command)
+        new(command)
       end
     end
 
@@ -24,30 +23,18 @@ module Qubole
     # @return [Command] command instance
     def self.find(id)
       command = Qubole.get("/commands/#{id}")
-      new.parse(command)
+      new(command)
     end
 
     # 
-    # Initialize command
-    # @param attrs [Hash] command attributes
-    # 
-    # @return [Command] command instance
-    def initialize(attrs = {})
-      self.payload = attrs
-    end
-
-    # 
-    # Parse command hash
+    # Update command attributes
     # @param attrs [Hash] command attributes
     # 
     # @return [Command] command instance
     def parse(attrs)
-      @id = attrs['id']
-      @status = attrs['status']
-      @command_type = attrs['command_type']
-      @progress = attrs['progress']
-      @raw = attrs
-      self
+      attrs.each do |key, value|
+        send("#{key}=", value)
+      end
     end
 
     # 
@@ -56,8 +43,8 @@ module Qubole
     # 
     # @return [Command] command instance
     def submit(params = {})
-      all_payload = payload.merge(params)
-      response = Qubole.post('/commands', JSON.generate(all_payload))
+      payload = self.to_h.merge(params)
+      response = Qubole.post('/commands', payload)
       parse(response)
     end
 

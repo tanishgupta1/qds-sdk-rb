@@ -2,7 +2,7 @@ require 'qubole/command'
 
 module Qubole
   module Commands
-    class Spark < Command
+    class Composite < Command
       def initialize(attrs = {})
         attrs[:command_type] = 'CompositeCommand'
         super(attrs)

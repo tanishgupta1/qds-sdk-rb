@@ -32,36 +32,6 @@ module Qubole
     end
 
     # 
-    # GET Request to Qubole
-    # @param path [String] API path
-    # @param params [Hash] GET parameters
-    # 
-    # @return [Hash|Array] parsed JSON response
-    def get(path, params = nil)
-      http(path, params) do |http, uri|
-        http.get(uri, headers)
-      end
-    end
-
-    # 
-    # POST Request to Qubole
-    # @param path [String] API path
-    # @param data [String] POST data
-    # 
-    # @return [Hash|Array] parsed JSON response
-    def post(path, data)
-      http(path) do |http, uri|
-        http.post(uri, data, headers)
-      end
-    end
-
-    def put(path)
-      http(path) do |http, uri|
-        http.send_request('GET', uri, headers)
-      end
-    end
-
-    # 
     # Request headers
     # 
     # @return [Hash] request headers
@@ -81,22 +51,36 @@ module Qubole
     # @yieldparam [URI] uri request URI
     # 
     # @return [Hash|Array] parsed JSON response
-    def http(path, params = nil, &block)
+    def http(name, path, params)
       # Build URI
       uri = URI(ACCESS_URL + version)
       uri.path += path
-      uri.query = URI.encode_www_form(params) if params
+
+      # Encode parameters for GET request
+      if name == 'GET'
+        uri.query = URI.encode_www_form(params)
+      else
+        # Stringify JSON for all other requests
+        data = JSON.generate(params) unless params.empty?
+      end
 
       # Open connection
       res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
         # Execute request
-        yield(http, uri)
+        http.send_request(name, uri, data, headers)
       end
 
       # Raise error message if not success
       raise HttpException.new(res) unless res.is_a? Net::HTTPSuccess
       # Parse JSON body
       JSON.parse(res.body) rescue res.body
+    end
+
+    # Defining HTTP methods for Qubole
+    %w(get post put delete).each do |name|
+      define_method(name) do |path, params = {}|
+        http(name.upcase, path, params)
+      end
     end
   end
 end

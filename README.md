@@ -27,7 +27,7 @@ Or install it yourself as:
 
 		# Submit Command
 		command = Qubole::Commands::Hive.new
-		command.submit(query: "SHOW TABLES")
+		command.submit(query: "SHOW TABLES", label: "custom cluster")
 		command.status # => "waiting"
 		command.refresh!
 		command.status # => "done"
