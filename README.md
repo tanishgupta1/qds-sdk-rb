@@ -20,7 +20,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+		require 'qubole'
+
+		# Configure Qubole with api_token and optional API version
+		Qubole.configure(api_token: 'ksbdvcwdkjn123423', version: 'v1.2')
+
+		# Submit Command
+		command = Qubole::Commands::Hive.new
+		command.submit(query: "SHOW TABLES")
+		command.status # => "waiting"
+		command.refresh!
+		command.status # => "done"
+		command.results # => {"results"=>"default_qubole_airline_origin_destination\r\ndefault_qubole_memetracker\r\n", "inline"=>true}
+		id = command.id
+		command = Qubole::Command.find(id)
+		command.logs # => "OK\n  Time taken: 3.017 seconds, Fetched: 2 row(s)"
 
 ## Contributing
 
