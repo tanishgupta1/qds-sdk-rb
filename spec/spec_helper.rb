@@ -27,7 +27,7 @@ require 'qubole'
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-# WebMock.allow_net_connect!(net_http_connect_on_start: true)
+WebMock.allow_net_connect!(net_http_connect_on_start: true)
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
