@@ -43,8 +43,8 @@ module Qubole
     # 
     # @return [Command] command instance
     def submit(params = {})
-      payload = self.to_h.merge(params)
-      response = Qubole.post('/commands', payload)
+      parse(params)
+      response = Qubole.post('/commands', self.to_h)
       parse(response)
     end
 

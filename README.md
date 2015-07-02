@@ -36,6 +36,32 @@ Or install it yourself as:
 		command = Qubole::Command.find(id)
 		command.logs # => "OK\n  Time taken: 3.017 seconds, Fetched: 2 row(s)"
 
+## Implemented
+
+[Qubole REST API](http://docs.qubole.com/en/latest/rest-api/index.html) version v1.2
+
+- [x] Authentication
+- [x] Command API
+	- [x] Submit a Command
+	- [x] View Command Status
+	- [x] View Command Results
+	- [x] View Command Logs
+	- [x] View Hadoop Jobs Spawned By a Command
+	- [x] Cancel a Command
+	- [x] View Command History
+	- [x] Composite Command
+	- [x] DB Export Command
+	- [x] DB Import Command
+	- [ ] DB Tap Query Command
+	- [x] Hadoop Jar Command
+	- [x] Hive Command
+	- [x] Pig Command
+	- [x] Presto Command
+	- [x] Shell Command
+	- [x] Spark Command
+- [ ] Scheduler API
+	- [ ] List Schedules
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/qubole/fork )
