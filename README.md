@@ -1,6 +1,14 @@
 # Qubole
 
-TODO: Write a gem description
+Qubole REST API client
+
+[![Build Status](https://travis-ci.org/Demandbase/qubole.svg?branch=master)](https://travis-ci.org/Demandbase/qubole)
+[![Code Climate](https://codeclimate.com/github/Demandbase/qubole/badges/gpa.svg)](https://codeclimate.com/github/Demandbase/qubole)
+[![Test Coverage](https://codeclimate.com/github/Demandbase/qubole/badges/coverage.svg)](https://codeclimate.com/github/Demandbase/qubole/coverage)
+
+## Documentation
+
+[API Documentation](http://www.rubydoc.info/github/Demandbase/qubole/master/Qubole)
 
 ## Installation
 
@@ -60,7 +68,7 @@ Or install it yourself as:
 	- [x] Shell Command
 	- [x] Spark Command
 - [ ] Scheduler API
-	- [ ] List Schedules
+	- [x] List Schedules
 
 ## Contributing
 
