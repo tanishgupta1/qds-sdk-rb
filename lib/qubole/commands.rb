@@ -1,6 +1,7 @@
 require 'qubole/commands/composite'
 require 'qubole/commands/db_export'
 require 'qubole/commands/db_import'
+require 'qubole/commands/db_tap_query'
 require 'qubole/commands/hadoop'
 require 'qubole/commands/hive'
 require 'qubole/commands/pig'

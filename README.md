@@ -60,7 +60,7 @@ Or install it yourself as:
 	- [x] Composite Command
 	- [x] DB Export Command
 	- [x] DB Import Command
-	- [ ] DB Tap Query Command
+	- [x] DB Tap Query Command
 	- [x] Hadoop Jar Command
 	- [x] Hive Command
 	- [x] Pig Command
