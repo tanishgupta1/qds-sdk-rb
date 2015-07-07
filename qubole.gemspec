@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["vladnik@demandbase.com"]
   spec.summary       = %q{Qubole REST API client}
   spec.description   = %q{Communication with Qubole REST API in a Ruby way}
-  spec.homepage      = "https://github.com/Demandbase/qubole"
+  spec.homepage      = "https://github.com/Demandbase/qubole-ruby"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
