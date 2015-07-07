@@ -67,8 +67,54 @@ Or install it yourself as:
 	- [x] Presto Command
 	- [x] Shell Command
 	- [x] Spark Command
+- [ ] Hive Metadata API
+	- [ ] List Tables
+	- [ ] Get Table Definition
+	- [ ] Get Table Properties
+	- [ ] Store Table Properties
+	- [ ] Delete Table Properties
+- [ ] DbTap API
+	- [ ] List DbTaps
+	- [ ] View a DbTap
+	- [ ] List Tables in a DbTap
+	- [ ] Create a DbTap
+	- [ ] Edit a DbTap
+	- [ ] Delete a DbTap
 - [ ] Scheduler API
-	- [x] List Schedules
+	- [ ] List Schedules
+	- [ ] View a Schedule
+	- [ ] Create a Schedule
+	- [ ] Suspend,Resume or Kill a Schedule
+	- [ ] List Schedule Actions
+	- [ ] View a Schedule’s Action
+	- [ ] Kill a Schedule Action
+	- [ ] Rerun a Scheduled Action
+	- [ ] List All Actions
+	- [ ] View an Action
+- [ ] Reports API
+	- [ ] All Commands Report
+	- [ ] Canonical Hive Commands Report
+	- [ ] Cluster nodes Report
+- [ ] Cluster API
+	- [ ] List All Clusters
+	- [ ] Create a New Cluster
+	- [ ] View Cluster Configuration
+	- [ ] Edit Cluster Configuration
+	- [ ] Clone a Cluster
+	- [ ] Start or Terminate a Cluster
+	- [ ] Check Cluster Status
+	- [ ] Delete a Cluster
+	- [ ] Reassign Cluster Label
+	- [ ] Run Adhoc Scripts on a Cluster
+	- [ ] Cluster Metrics
+	- [ ] Add a Node to a Cluster
+	- [ ] Replace a Node in a Cluster
+	- [ ] Remove a Node from a Cluster
+	- [ ] Take an HBase Snapshot
+	- [ ] View an HBase Snapshot Schedule
+	- [ ] Restore HBase Tables
+	- [ ] Update an HBase Snapshot Schedule
+
 
 ## Contributing
 
