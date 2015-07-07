@@ -2,7 +2,7 @@
 
 Qubole REST API client
 
-[![Build Status](https://travis-ci.org/Demandbase/qubole.svg?branch=master)](https://travis-ci.org/Demandbase/qubole)
+[![Build Status](https://travis-ci.org/Demandbase/qubole-ruby.svg?branch=master)](https://travis-ci.org/Demandbase/qubole-ruby)
 [![Code Climate](https://codeclimate.com/github/Demandbase/qubole/badges/gpa.svg)](https://codeclimate.com/github/Demandbase/qubole)
 [![Test Coverage](https://codeclimate.com/github/Demandbase/qubole/badges/coverage.svg)](https://codeclimate.com/github/Demandbase/qubole/coverage)
 
