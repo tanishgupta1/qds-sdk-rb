@@ -1,6 +1,7 @@
 require "qubole/version"
 require "qubole/exceptions"
 require "qubole/commands"
+require "qubole/cluster"
 require "net/http"
 require "json"
 
